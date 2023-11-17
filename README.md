@@ -19,7 +19,7 @@ We have chosen to focus our analysis exclusively on data from the United States.
 
 - [**U.S. Box Office**](https://www.boxofficemojo.com/chart/top_lifetime_gross/) - Dataset containing the lifetime grosses of movies in the U.S. domestic market as of August 2019. The date range was again restricted to 1992-2012. This dataset serves as an extension to the [CMU Movie Summary Corpus dataset](http://www.cs.cmu.edu/~ark/personas/), which only contains international movie box office revenue. Our analysis focuses on the `lifetime_gross` column; however, we also utilize the `studio` column, which will be employed for addressing our fifth research question in later stages.
 
-- [**Inflation Rate**](https://www.bls.gov/data/inflation_calculator.htm) - Dataset containing the U.S. annual inflation rate. The sole column in this dataset, labeled `factor` is employed to adjust the domestic 'lifetime_gross' for each movie, based on the inflation rate of the corresponding year. This contributes to a more comprehensive and precise analysis of the data.
+- [**Inflation Rate**](https://www.bls.gov/data/inflation_calculator.htm) - Dataset containing the U.S. annual inflation rate. The sole column in this dataset, labeled `factor` is employed to adjust the domestic `lifetime_gross` for each movie, based on the inflation rate of the corresponding year. This contributes to a more comprehensive and precise analysis of the data.
 
 ## Methods
 

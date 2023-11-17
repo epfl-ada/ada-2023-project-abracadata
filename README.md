@@ -37,7 +37,7 @@ When cleaning and parsing the data, a few general assumptions were made to make 
 
 - As our research questions revolve around the distinction between “good” and “bad” weather, we decided to scrutinize different definitions for clarity and depth. For our initial analyses, we employed the following basic definition: "good" weather was determined when the temperature/precipitation exceeded or fell below the cumulative average, and deemed "bad" otherwise.
 
-### Step 1: Datasets Prepocessing
+### Step 1: Datasets Preprocessing
 - [**CMU Movie Summary Corpus**](http://www.cs.cmu.edu/~ark/personas/)
     - In accordance with our research questions, we exclusively utilized the `movie.metadata.tsv` table. We performed a cleaning process to retain only the columns: `movie_name`, `movie_genres`, `movie_release_date`, `movie_runtime`, and `movie_box_office_revenue`. 
     - As mentioned earlier, the dataset exclusively provides global box office revenue, while our focus as a group was specifically on U.S. domestic box office revenue. This meant that we had to search other data sites, such as [Box Office Mojo](https://www.boxofficemojo.com/chart/top_lifetime_gross/), to acquire more specific data for merging. 

@@ -192,7 +192,7 @@ input, select, textarea {
 	}
 
 		.container.medium {
-			width: 38.25em;
+			width: 70%;
 		}
 
 		@media screen and (max-width: 1280px) {
@@ -202,7 +202,7 @@ input, select, textarea {
 			}
 
 				.container.medium {
-					width: 36em;
+					width: 70%;
 				}
 
 		}
@@ -214,7 +214,7 @@ input, select, textarea {
 			}
 
 				.container.medium {
-					width: 71.25%;
+					width: 70%;
 				}
 
 		}
@@ -1970,7 +1970,7 @@ input, select, textarea {
 			position: relative;
 			top: -1em;
 			color: #888888;
-			text-transform: uppercase;
+			/* text-transform: uppercase; */
 			letter-spacing: 0.075em;
 		}
 
@@ -2171,6 +2171,7 @@ input, select, textarea {
 		border: 0;
 		display: inline-block;
 		position: relative;
+		background-size: contain;
 	}
 
 		.image:after {
@@ -2178,7 +2179,7 @@ input, select, textarea {
 			-webkit-transition: opacity 0.25s ease-in-out;
 			-ms-transition: opacity 0.25s ease-in-out;
 			transition: opacity 0.25s ease-in-out;
-			background-image: url("images/blue.jpeg");
+			background: linear-gradient(rgba(81,86,115,0.5), rgba(81,86,115,0.5));
 			content: '';
 			display: block;
 			height: 100%;
@@ -2636,9 +2637,11 @@ input, select, textarea {
 
 			.feature .image img {
 				display: block;
-				min-height: 100%;
-				min-width: 100%;
-				position: absolute;
+				/* min-height: 100%;
+				min-width: 100%; */
+				height: 100%;
+				width: auto;
+				/* position: absolute; */
 			}
 
 		.feature:before {
@@ -2706,12 +2709,12 @@ input, select, textarea {
 
 	#header {
 		background-attachment: scroll,							scroll,					fixed;
-		background-image: url("images/top-3200.svg"), url("images/blue.jpeg"), url("images/totoro_rain.jpeg");
+		background: url("images/top-3200.svg"), linear-gradient(rgba(81,86,115,0.3), rgba(81,86,115,0.9)), url("images/totoro_rain.jpeg");
 		background-position: bottom center,					top left,				top center;
 		background-repeat: repeat-x,						repeat,					no-repeat;
 		background-size: 3200px 460px,					auto,					cover;
 		color: rgba(255, 255, 255, 0.8);
-		padding: 10em 0 20em 0;
+		padding: 20em 0 20em 0;
 		position: relative;
 		text-align: center;
 	}
@@ -2734,6 +2737,7 @@ input, select, textarea {
 		#header:after {
 			bottom: 0;
 			height: 50px;
+			opacity: 0.10;
 		}
 
 		#header a {
@@ -3021,10 +3025,12 @@ input, select, textarea {
 		/* Header */
 
 			#header {
-				background-attachment: scroll,							scroll,							scroll;
-				background-image: url("images/top-1600.svg"), url("images/overlay.png"), url("../../images/header.jpg");
-				background-size: 1600px 230px,					auto,							cover;
-				padding: 6em 0 12em 0;
+				background-attachment: scroll,							scroll,							fixed;
+				background: url("images/top-1600.svg"), linear-gradient(rgba(81,86,115,0.3), rgba(81,86,115,0.9)), url("images/totoro_rain.jpeg");
+				background-position: bottom center,								top left,										top center;
+				background-repeat: repeat-x,									repeat,											no-repeat;
+				background-size: 1600px 230px,									cover,											cover;
+				padding: 15em 0 12em 0;
 			}
 
 				#header:before {
@@ -3174,9 +3180,11 @@ input, select, textarea {
 		/* Header */
 
 			#header {
-				background-image: url("images/top-1280.svg"), url("images/blue.jpeg"), url("../../images/header.jpg");
-				background-size: 1280px 184px,						auto,							cover;
-				padding: 3em 0 7em 0;
+				background: url("images/top-1280.svg"), linear-gradient(rgba(81,86,115,0.3), rgba(81,86,115,0.9)), url("images/totoro_rain.jpeg");
+				background-position: bottom center,								top left,										top center;
+				background-repeat: repeat-x,									repeat,					     					no-repeat;
+				background-size: 1280px 184px,									cover,											cover;
+				padding: 7em 0 7em 0;
 			}
 
 				#header:before {

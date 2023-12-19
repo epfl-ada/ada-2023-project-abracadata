@@ -296,6 +296,11 @@ input, select, textarea {
 
 		}
 
+.responsive-plot {
+	width: 100%;
+	height: 50vh; /* Adjust as needed */
+}
+
 /* Row */
 
 	.row {

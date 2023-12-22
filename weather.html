@@ -12,7 +12,7 @@
 	<body class="is-preload">
 
 		<!-- Header -->
-		<div id="header" style="font-size: xx-large;">
+		<div id="header">
 			<h1>Weather Data Analysis</h1>
 		</div>
 		
@@ -40,7 +40,10 @@
 						   us the following 8 cities: New York, Los Angeles, Chicago, Seattle, Washington DC, Atlanta, Miami, and Dallas
 						   (not ranked in terms of how much we actually like them).
 						</p>
-						<p>As we delve into the diverse climatic patterns of these significant American cities, we've created an interactive map to enhance your exploration. This map vividly illustrates each of the previous mentionned eight cities . By hovering over each city on the map, you can uncover a snapshot of their typical weather patterns. This feature not only offers a convenient way to compare the cities' climates but also provides insights into their unique weather characteristics. From the balmy warmth of Miami to the broader temperature range of Chicago and New York, the map is a dynamic tool to visualize and understand how weather varies across these pivotal urban centers. Go ahead, hover over the cities, and see for yourself the climatic diversity that the United States has to offer!"
+						<p>As we delve into the diverse climatic patterns of these cities, we've created an interactive map to enhance your exploration.
+						   By hovering over each city on the map, you can see a brief description of their outstanding weather features. From the constant
+						   warm weather of Miami to the freezing winters of Chicago and New York, the map allows you to visualize how weather varies across
+						   the US. Go ahead – hover over the cities and see it for yourself!
 						</p>
 
 					</section>
@@ -87,65 +90,47 @@
 						   afternoon or evening, both warmer times of the day, to watch movies.</p>
 
 						<header>
-							<p>Good and bad weather </p>
+							<p>What exactly is "good" and "bad" weather? </p>
 						</header>
 
-						<p>In our analysis, we devised a tailored strategy to categorize 
-							weather conditions into 'good' and 'bad' based on each city's unique
-							 climatic patterns. Recognizing the subjective nature of weather preferences, 
-							 our approach was specifically designed to reflect the typical 
-							weather characteristics of each city.
-					 </p>
-
-					 <ol>
-						<style>
-							li {
-								margin-left: 20px; /* Adjusts the left margin of list items for horizontal spacing */
-							}
-						</style>
-						<li>For cities such as Miami, Los Angeles (LA), and Atlanta:
-							<ol>
-								<li><strong>Precipitation Criterion:</strong> We chose to define 'good weather' in these cities as days with precipitation levels below 25% of the city's average. This decision aligns with the general perception of these cities as having dry and sunny climates. Particularly in LA and Miami, lower precipitation is often indicative of more desirable weather conditions.</li>
-								<li><strong>Temperature Criterion:</strong> Additionally, we considered days with average temperatures at or above the mean as 'good weather.' This criterion was selected in light of the warmer climates of these cities, where higher temperatures are generally more typical and often preferred by residents and visitors.</li>
-							</ol>
-						</li>
-						<li>For other cities in our study:
-							<ol>
-								<li><strong>Precipitation and Temperature Criteria:</strong> We categorized weather as 'bad' when precipitation was at or below the mean and average temperatures were at or below the city's mean. This classification was particularly apt for cities known for their more diverse and sometimes harsher weather conditions, including cold winters. It takes into account the higher precipitation and more extreme temperatures (both high and low) that these cities often experience.</li>
-							</ol>
-						</li>
-					</ol>
-
-					
-					</section>
-					<iframe class="responsive-plot" src="plots/weather_classification.html" frameborder="0"></iframe>
-					<section>
-
-						<p>We can see that our startegy alignes with the general
-							 perception of these cities' weather conditions. 
-							 For example, Miami, LA, and Atlanta have a higher 
-							 proportion of 'good weather' days than the other cities. 
-							 This is consistent with the perception of these cities as
-							  having more desirable weather conditions. On the other 
-							  hand, cities such as Chicago and New York have a higher 
-							  proportion of 'bad weather' days, which is in line with 
-							  the perception of these cities as having more extreme 
-							  weather conditions.</p>
-
-						
-
-					</section>
-					<section>
-						<header>
-							<p>What exactly is "good" and "bad" weather?</p>
-						</header>
 						<p>The definition of "good" and "bad" weather is hghly subjective, but we decided on definitions based on a group consensus. Our initial naive
-						   definition of "bad" weather is as follows:
+							definition of "bad" weather is as follows:
 						</p>
 						<ol class="default">
 							<li>The average temperature was colder than usual -- you might want to stay home on an especially cold winter day</li>
 							<li>There is more rain or snow than usual -- we prefer not getting our clothes wet most of the times</li>
-						</ol>
+					    </ol>
+
+						<p>However, this definition is too naive as it does not capture the nuances in the definition of "good" or "bad" between each city. Someone in
+						   LA, for example, might see any rain as "bad" weather whereas for a New Yorker, truly bad weather depends on the quantity of rain.
+						</p>
+			 
+					    <p>For cities such as Miami, Los Angeles (LA), and Atlanta:</p>
+						<blockquote><strong>Precipitation Critera:</strong>
+							We chose to define 'good weather' in these cities as days with precipitation levels below 25% of the city's average. This decision aligns with
+							the general perception of these cities as having dry and sunny climates. Particularly in LA and Miami, lower precipitation is often indicative
+							of more desirable weather conditions.<br>
+							<strong>Temperature Critera:</strong>We considered days with average temperatures at or above the mean as 'good weather'.
+							This criterion was selected in light of the warmer climates of these cities, where higher temperatures are generally more typical and often
+							preferred by residents and visitors.
+						</blockquote>
+
+						<p>For the other cities:</p>
+						<blockquote><strong>Precipitation and Temperature Criteria:</strong> We categorized weather as 'bad' when precipitation was at or below the mean
+							and average temperatures were at or below the city's mean. This classification is reminiscent for that of the naive model. This is a valid
+							assumption as these cities have a wider range of weather conditions, especially cold winters. It takes into account the higher precipitation
+							and more extreme temperatures (both high and low) that these cities often experience.</blockquote>
+							
+						<p>Using these two assumptions, we get the following, much more reasonable, classification of good or bad weather.</p>
+
+						<iframe class="responsive-plot" src="plots/weather_classification.html" frameborder="0"></iframe>
+
+						<p>We can see that our method aligns with the general perception of these cities' weather conditions. For example, Miami, LA, and Atlanta have a
+							higher proportion of 'good weather' days than that of other cities, which is consistent with the perception of these cities as having more
+							desirable weather conditions. On the other hand, cities such as Chicago and New York have a higher proportion of 'bad weather' days, which
+							is in line with the perception of these cities as having more extreme weather conditions.</p>
+						
+						<p>That's it about the weather data! It's time to move onto the movie dataset, or if you have already, then the data story!</p>
 					</section>
 					<section>
 						<h2>

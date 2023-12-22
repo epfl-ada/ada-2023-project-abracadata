@@ -100,12 +100,18 @@
 							<li>The average temperature was colder than usual – you might want to stay home on an especially cold winter day</li>
 							<li>There is more rain or snow than usual – we prefer not getting our clothes wet most of the times</li>
 					    </ol>
-
+					
 						<p>However, this definition is too naive as it does not capture the nuances in the definition of "good" or "bad" between each city. Someone in
-						   LA, for example, might see any rain as "bad" weather whereas for a New Yorker, truly bad weather depends on the quantity of rain.
+						   LA, for example, might see any rain as "bad" weather whereas for a New Yorker, truly bad weather depends on the quantity of rain. This is depicted in the following plot. 
+						   Indeed, there are as much bad weather days in Los Angeles 
+						and Miami as New york, which could make Angelenos raise an eyebrow. In LA, calling a slight drizzle 'bad weather' might just be the biggest plot twist of the season!</p>
 						</p>
-			 
-					    <p>For cities such as Miami, Los Angeles (LA), and Atlanta:</p>
+					</section>
+					<iframe class="responsive-plot" src="plots/weather_classification_naive.html" frameborder="0"></iframe>
+					<section>
+					    <p>Therefore, we decided to redefine "good" and "bad" weather based on the average precipitation and temperature of each city. We chose to define to define it as the following for each city:</p>	
+
+							<p>For cities such as Miami, Los Angeles (LA), and Atlanta:</p>
 						<blockquote><strong>Precipitation Critera:</strong>
 							We chose to define 'good weather' in these cities as days with precipitation levels below 25% of the city's average. This decision aligns with
 							the general perception of these cities as having dry and sunny climates. Particularly in LA and Miami, lower precipitation is often indicative

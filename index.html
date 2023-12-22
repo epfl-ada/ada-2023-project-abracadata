@@ -21,11 +21,16 @@
 			<div id="main">
 
 				<header class="major container medium">
-					<p>Probably our introduction/abstract paragraph</p>
+					<p>Ever wonder if rain makes people crave a good comedy, or if sunny days sparks an interest in action movies?
+					   Join us as we explore the surprising ways that weather might influence what people watch in theaters across the United States.
+					   From rainy nights to sunny afternoons, let's discover how the skies above could shape the movies we love. Ready for an
+					   adventure into the world of weather and films? Let's go!</p>
 				</header>
 				<div class="box container">
 					<h2>Introduction</h2>
-					<p>Step into our world of weather and movies! Ever wonder if rain makes people crave a good comedy, or if sunny days boost action movie sales? We're on a mission to find out. Join us as we explore the surprising ways that weather might influence what people watch in theaters across the United States. From stormy nights to sunny afternoons, let's discover how the skies above could shape the movies we love. Ready for a fun adventure into the world of weather and films? Let's go!</p>
+					<p>In our data story, we will analyze how bad weather might affect different aspects of the film industry of the United States, 
+						from overall revenue to per genre distributions. Who knows, maybe everyone enjoys the warmth and coziness of a romance movie more 
+						when it is pouring or heavily snowing outside!</p>
 					<h2>A little bit about the data</h2>
 					<p>The CMU Movie Summary Corpus provides metadata about movies released between 1893 and 2012. It provides us with a wide range of
 						movie data, from box office revenue to a list of movie genres. On the other hand, the weather datasets from the National Oceanic 
@@ -76,6 +81,35 @@
 						</header>
 						<p>Everyone has their own opinion about when is the best time to watch certain movie genres.
 						   Don't believe us? 
+						</p>
+					</section>
+					<section>
+						<header>
+							<h3>Do movie producers actually pay attention to weather?</h3>
+						</header>
+						<p>Now that we know weather has some effect on movie revenue, it's time to see if producers and movie studios know this fact
+						   and schedule their movie releases around months where weather is nicer. If I were a movie producer, I would aim to release
+						   a movie during summer: all the students are out, the weather is nice, and the parents are also looking to take vacations
+						   during this time. Is there a better moment to release a movie? Well, let's see!
+						</p>
+						<p>
+							Let's compare the proportion of bad weather days per month to the number of movie releases across each month:
+						</p>
+						<img src="plots/bad_weather_month.png">
+						<img src="plots/movie_release_month.png">
+						<p>
+							At a quick glance, we can actually notice that summer months like June and July actually have very few movie releases, whereas September
+							has the most (turns out I'm not fit to be a movie producer...). But, we notice that summer months also seem to have the highest proportion
+							of bad weather days. Maybe producers do know how to strategically 
+						</p>
+						<p>
+Then, we do the same for the probability of rain for each month. The summer month appear to be the one with the most bad weather cases. This contrast with the result from above, as they are the months with the least amount of movie released.
+\picture with the bad weather per month
+To get into more details, we look at the number of movies released per month between 1992 and 2012, and the amount of bad weather days between these 2 days. These are shown in the heatmaps below: 
+\heatmaps
+However, it shows that September tends to have a lot of bad weather days, but also lots of movie released, while June and July have a lot of bad weather days, and low amount of movie released
+Additionally, running a correlation between these 2 variables, we obtain the following graph, that shows no clear correlation. The score is also quite low : 0.16, indicating that there is a low effect. 
+\correlation
 						</p>
 					</section>
 					<section>

@@ -58,7 +58,7 @@
 				
 				<div class="box container">
 					<header>
-						<h2>So, does weather affect box office revenue?</h2>
+						<h2>Do changes in weather impact box office revenue?</h2>
 					</header>
 					<section>
 						<p></p>
@@ -86,8 +86,36 @@
 						<p>In case the stark drop in mean revenue for the indie films weren't enough as an answer, the answer:
 						   a lot more. We can even do a t-test if you still aren't convinced. Doing a test on the distribution
 						   of revenue for all the major film studio releases against the distribution of the indie films, we
-						   get a p-value of \(6.98\cdot 10^{-98}\) which we will just call \(0\).
+						   get a p-value of \(6.98\cdot 10^{-98}\) which we will just call \(0\). A p-value this small provides
+						   strong evidence against both revenues distributions being equal. A t-statistic of \(21.83\) only serves
+						   as further justification for our findings.
 						</p>
+						<p>We now know that indie films have a drastically lower average revenue than movies released by
+						   bigger studios, but we still have yet to figure out: are indie movies more affected by weather?
+						</p>
+						<p>To answer this question, we isolated the opening weekend for all films and checked how much the proportion
+						   of bad weather days affected the distribution of movie revenue. We specifically looked for the opening
+						   weekend, as it is usually the most important weekend for all films – a substantial amount of their
+						   revenue (\(\sim 25-30\%\)) can be made during the opening weekend. For the following plot, each bad weather day
+						   adds 0.5 to the film's "weather condition," placing it into one of four categories along the x-axis.
+						</p>
+						<iframe class="responsive-plot" src="plots/studios_bo_weather_performance.html" frameborder="0"></iframe>
+						<p>As it turns out, major studios are actually more affected by weather! What a surprise – or is it? Since
+						   blockbusters are often marketed towards a general audience (the more people, the better), they generally
+						   have a larger fraction of people who can be called "the casual moviegoer". On the other hand, indie films
+						   are lesser known, but with this comes the fact that those who want to watch an indie film are usually
+						   avid fans of the studio and will watch the movie, rain or shine. To confirm our observations, we conducted
+						   a one sample t-test on both the blockbuster and the indie film distributions, and the t-statistics were
+						   \(-0.8253\) and \(-0.7537\), respectively. Although slight, the more negative t-statistic for the blockbusters
+						   show us that our observations are correct.
+						</p>
+					</section>
+					<section>
+						<header>
+							<h2>
+								So...does weather affect movie revenue?
+							</h2>
+						</header>
 					</section>
 				</div>
 			</div>

@@ -5,6 +5,9 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<script type="text/javascript" async
+			src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+		</script>
 	</head>
 	<body class="is-preload">
 
@@ -22,112 +25,127 @@
 				
 				<div class="box container">
 					<header>
-						<h2>Analysis Process</h2>
+						<h2>The Movie Dataset</h2>
 					</header>
 					<section>
+						<p>The CMU Movie Summary Corpus contains hundreds of thousands of movies and a lot of their metadata.
+						   Given that we are only trying to analyze the effect of weather on movie revenue (along with some
+						   deeper dives), we only need to look into a few aspects of movies.
+						</p>
+					</section>
+
+					<section>
+						<header>
+							<p>First and Foremost: Revenue</p>
+						</header>
+						<p>Seeing as we want to compare the success of movies, it's a given that we need the revenue! However,
+						   the data that we are working with is quite old (1992!), we have to factor in inflation to get an accurate
+						   estimation of box office revenues over a span of 20 years.
+						</p>
+						<p>If that didn't convince you, think about it this way: $1 in 1992 was worth $1.64 in 2012. That's over a 150%
+						   increase. This means that all the box office revenues reported in 1992 would only be accurate to those reported
+						   in 2012 if we multiply them by 1.64.
+						</p>
+						<p>
+							The following plot shows the difference between both the revenue corrected for inflation, and the original
+							revenue values. Since regularly plotting the revenue leads to an extremely heavy-tailed distribution, as most
+							values are around \(10^8\) in price, we graphed it using a loglog plot.
+						</p>
+						<iframe class="responsive-plot" src="plots/revenue_distribution.html" frameborder="0"></iframe>
+						<p>
+							A quick t-test confirms the need for inflation correction, with the p-value for the t-test between both revenue distributions
+							yielding a value of \(1.68\cdot 10^{-10} \ll 0.05\). 
+						</p>
+					</section>
+					<section>
+						<header>
+							<p>Next Up: What is Each Movie About?</p>
+						</header>
+						<p>Movies each have their own set of genres, but some might be more popular than others. Furthermore, each genre
+						   might have a different audience with a different preference for weather. You may not have noticed, but you probably know some
+						   people who enjoy a good romance movie when it's raining out (to soothe the weather depression), or some crazy ones
+						   who think that rain and thunder is a perfect moment for a scary horror movie.
+						</p>
+						<p>Just for fun, here's a word cloud to show which genres are the most popular choices for movie releases between 1992 and 2012!</p>
+						<img class="smaller-img" src="plots/genre_wordcloud.png" alt="Genre Wordcloud">
+						<p>It's no surprise that drama, comedy, romance, and action are all among the top genres released. Just think about the last movie
+						   you recall hearing about – there's a high chance it falls into at least one of those four categories.
+						</p>
+						<p>If we take another look at the word cloud, we can notice one other issue: there are too many genres. To help mitigate this
+						   issue, we aggregated similar genres under the same umbrella as follows:
+						</p>
+						<section>
+							<div class="table-wrapper">
+								<table class="default">
+									<thead>
+										<tr>
+											<th>Overall Genre Name</th>
+											<th>Sub-Genres</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Western</td>
+											<td>Western</td>
+										</tr>
+										<tr>
+											<td>Action</td>
+											<td>Action</td>
+										</tr>
+										<tr>
+											<td>Comedy</td>
+											<td>Comedy</td>
+										</tr>
+										<tr>
+											<td>Thrillers</td>
+											<td>Thrillers</td>
+										</tr>
+										<tr>
+											<td>Adventure</td>
+											<td>Adventure</td>
+										</tr>
+										<tr>
+											<td>Drama</td>
+											<td>Drama</td>
+										</tr>
+										<tr>
+											<td>Musical</td>
+											<td>Musical</td>
+										</tr>
+										<tr>
+											<td>Animation</td>
+											<td>Animated, Anime, Animation</td>
+										</tr>
+										<tr>
+											<td>History</td>
+											<td>Archive, History</td>
+										</tr>
+										<tr>
+											<td>Biography</td>
+											<td>Biopic, Biographical, Biography</td>
+										</tr>
+										<tr>
+											<td>Sports</td>
+											<td>Sports</td>
+										</tr>
+										<tr>
+											<td>Fantasy</td>
+											<td>Fantasy</td>
+										</tr>
+										<tr>
+											<td>Indie</td>
+											<td>Indie</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</section>
 						<iframe class="responsive-plot" src="plots/genre_distribution.html" frameborder="0"></iframe>
-						<header>
-							<h3>Paragraph</h3>
-							<p>This is the subtitle for this particular heading</p>
-						</header>
-						<p>Phasellus nisl nisl, varius id <sup>porttitor sed pellentesque</sup> ac orci. Pellentesque
-						habitant <strong>strong</strong> tristique <b>bold</b> et netus <i>italic</i> malesuada <em>emphasized</em> ac turpis egestas. Morbi
-						leo suscipit ut. Praesent <sub>id turpis vitae</sub> turpis pretium ultricies. Vestibulum sit
-						amet risus elit.</p>
-					</section>
-					<section>
-						<header>
-							<h3>Blockquote</h3>
-						</header>
-						<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget.
-						tempus euismod. Vestibulum ante ipsum primis in faucibus.</blockquote>
-					</section>
-					<section>
-						<header>
-							<h3>Divider</h3>
-						</header>
-						<p>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra
-						ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel. Praesent nec orci
-						facilisis leo magna. Cras sit amet urna eros, id egestas urna. Quisque aliquam
-						tempus euismod. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-						posuere cubilia.</p>
-						<hr />
-						<p>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra
-						ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel. Praesent nec orci
-						facilisis leo magna. Cras sit amet urna eros, id egestas urna. Quisque aliquam
-						tempus euismod. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-						posuere cubilia.</p>
-					</section>
-					<section>
-						<header>
-							<h3>Unordered List</h3>
-						</header>
-						<ul class="default">
-							<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-							<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-							<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-							<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-						</ul>
-					</section>
-					<section>
-						<header>
-							<h3>Ordered List</h3>
-						</header>
-						<ol class="default">
-							<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-							<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-							<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-							<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-						</ol>
-					</section>
-					<section>
-						<header>
-							<h3>Table</h3>
-						</header>
-						<div class="table-wrapper">
-							<table class="default">
-								<thead>
-									<tr>
-										<th>ID</th>
-										<th>Name</th>
-										<th>Description</th>
-										<th>Price</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>45815</td>
-										<td>Something</td>
-										<td>Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</td>
-										<td>29.99</td>
-									</tr>
-									<tr>
-										<td>24524</td>
-										<td>Nothing</td>
-										<td>Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</td>
-										<td>19.99</td>
-									</tr>
-									<tr>
-										<td>45815</td>
-										<td>Something</td>
-										<td>Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</td>
-										<td>29.99</td>
-									</tr>
-									<tr>
-										<td>24524</td>
-										<td>Nothing</td>
-										<td>Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</td>
-										<td>19.99</td>
-									</tr>
-								</tbody>
-								<tfoot>
-									<tr>
-										<td colspan="3"></td>
-										<td>100.00</td>
-									</tr>
-								</tfoot>
-							</table>
-						</div>
+						<p>One interesting aspect of the distribution of genres is the steep drop between the first
+						   two most popular genres, drama and comedy, and the rest of the genres that are released. You
+						   can try and see for yourself if this is true – do you watch more drama or comedy than any other
+						   genre in the movie theaters?
+						</p>
 					</section>
 					<h2>
 						<a href="index.html"><span class="arrow arrow-left"></span>   Back to the Data Story</a>

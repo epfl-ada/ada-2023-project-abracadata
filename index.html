@@ -74,6 +74,62 @@
 						   the weather can change from warm, sunny weather to chilly, fall weather, meaning that when pairing
 						   the movies, we should match approximate time of year.
 						</p>
+
+						<section>
+                       
+							<header>
+								<h3>When it comes to genres... </h3>
+</header>
+								<p>
+									In exploring the intriguing relationship between weather conditions 
+									and movie-going habits, our analysis seeks to uncover whether specific
+									 weather patterns have a tangible impact on the popularity of different 
+									 film genres. Intuitively, one might expect inclement weather to boost 
+									 cinema attendance, as people seek indoor entertainment. But does rainy 
+									 weather make audiences gravitate more towards the escapism of fantasy or
+									  the thrill of horror? Conversely, do sunny days decrease overall theater 
+									  attendance but possibly favor certain genres, like uplifting comedies or action-packed adventures? By examining attendance data against local weather patterns, we aim to unravel these trends, offering a unique perspective on how the elements outside might influence the choice of movies inside the theater. This analysis not only provides insights for movie distributors and theaters but also enriches our understanding of consumer behavior in relation to environmental factors.
+								 </p>
+                    
+
+								<p>To rigorously test whether bad weather affects different movie genres in varied ways, we conducted a linear regression analysis incorporating interactions between various genres and the 'bad weather' condition. Initially, our regression model included interactions for all available genres. However, this approach faced a challenge: the vast number of genres diluted the observable effect of bad weather, making it difficult to discern clear patterns in the data. Additionally, some interaction coefficients in this comprehensive model were not statistically significant, indicating a lack of consistent influence across all genres.
+									<figure>
+										<img src="images/olsreg.webp" alt="Weather Daily Graph">
+										<figcaption>The OlS regression results</figcaption>
+									</figure>
+									To address these complexities, we refined our approach by focusing on the three most frequently watched genres. By limiting our analysis to these key categories, we could more accurately capture the nuances of how weather might differentially impact viewer preferences. This targeted analysis revealed that the influence of bad weather on movie attendance is indeed heterogeneous – it varies significantly depending on the genre. Such findings suggest that while some genres might see a boost in popularity during bad weather, others do not, highlighting the intricate interplay between environmental conditions and entertainment choices.
+								</p>
+
+								<figure>
+									<img src="images/olstop3.webp" alt="Weather Daily Graph">
+									<figcaption>The OlS regression results with top 3 genres</figcaption>
+								</figure>
+
+								<p>The regression output indicates that weather status (captured by the variable AVG_WEATHER_STATUS) and its interaction with movie genres can have differing effects on box office performance. Specifically:
+									<ol class="default">
+										<li> <strong>Genre Interaction:</strong> The coefficient for the interaction between bad weather and the drama genre is negative (-2.534e+07), suggesting that drama movies tend to perform worse at the box office on bad weather days. This could imply that audiences are less inclined to watch heavier, more serious 
+											films when the weather is poor, possibly preferring to stay at home or seeking out more uplifting forms of entertainment. </li>
+									
+											<li><strong>Comedy Genre Interaction</strong>: The coefficient for the comedy genre interaction is positive (4.634e+06), although not statistically significant (p-value 0.112), 
+												indicating a possible trend that comedies might perform slightly better or remain unaffected by bad weather. The insignificance could be due to variability in 
+												the data or other confounding factors not accounted for in the model. Generally, it is believed that the light-hearted nature of comedies could attract audiences looking for cheer on gloomier days.</li>
+									
+												<li><strong>Mystery Genre Interaction</strong>: The coefficient for the mystery genre interaction is also positive (6.818e+06) and statistically significant (p-value 0.040), 
+													suggesting that mystery films might see a relative increase in attendance during bad weather. This effect could be attributed to the atmospheric and engaging
+													 nature of mystery films, which may be a compelling draw for audiences on days with inclement weather.</li>
+
+													</ol>
+									
+									</p>
+							
+
+
+
+                    </section>
+
+
+
+					
 					</section>
 					<section>
 						<header>

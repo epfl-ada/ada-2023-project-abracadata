@@ -93,9 +93,20 @@
 							<p>What exactly is "good" and "bad" weather? </p>
 						</header>
 
-						<p>The definition of "good" and "bad" weather is hghly subjective, but we decided on definitions based on a group consensus. Our initial naive
-							definition of "bad" weather is as follows:
+						<p>
+							The concept of "good" and "bad" weather varies greatly from person to person. Initially, 
+							we attempted to categorize weather patterns into two distinct groups using K-means clustering. However, this method didn't yield clear-cut results. As illustrated in the plot below, 
+							the weather clusters were not as distinct as we had hoped. The method captures quite well the clustering regarding the precipiation but doesn't varies much with the temperature.
+							As they are not reliable, we decided to use a different method to define "good" and "bad" weather.
 						</p>
+						<iframe class="responsive-plot" src="plots/clust1.html" frameborder="0"></iframe>
+						<section>
+							<p>
+								After this, we turned to collective decision-making to define what we consider "good" and "bad" weather. Our agreed-upon definition of "bad" weather is as follows:
+							</p>
+						</section>
+						
+
 						<ol class="default">
 							<li>The average temperature was colder than usual -- you might want to stay home on an especially cold winter day</li>
 							<li>There is more rain or snow than usual -- we prefer not getting our clothes wet most of the times</li>

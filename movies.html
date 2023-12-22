@@ -5,6 +5,9 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<script type="text/javascript" async
+			src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+		</script>
 	</head>
 	<body class="is-preload">
 
@@ -22,26 +25,35 @@
 				
 				<div class="box container">
 					<header>
-						<h2>Analysis Process</h2>
+						<h2>The Movie Dataset</h2>
 					</header>
 					<section>
-						<iframe class="responsive-plot" src="plots/genre_distribution.html" frameborder="0"></iframe>
-						<header>
-							<h3>Paragraph</h3>
-							<p>This is the subtitle for this particular heading</p>
-						</header>
-						<p>Phasellus nisl nisl, varius id <sup>porttitor sed pellentesque</sup> ac orci. Pellentesque
-						habitant <strong>strong</strong> tristique <b>bold</b> et netus <i>italic</i> malesuada <em>emphasized</em> ac turpis egestas. Morbi
-						leo suscipit ut. Praesent <sub>id turpis vitae</sub> turpis pretium ultricies. Vestibulum sit
-						amet risus elit.</p>
+						<p>The CMU Movie Summary Corpus contains hundreds of thousands of movies and a lot of their metadata.
+						   Given that we are only trying to analyze the effect of weather on movie revenue (along with some
+						   deeper dives), we only need to look into a few aspects of movies.
+						</p>
 					</section>
+
 					<section>
 						<header>
-							<h3>Blockquote</h3>
+							<p>First and Foremost: Revenue</p>
 						</header>
-						<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget.
-						tempus euismod. Vestibulum ante ipsum primis in faucibus.</blockquote>
+						<p>Seeing as we want to compare the success of movies, it's a given that we need the revenue! However,
+						   the data that we are working with is quite old (1992!), we have to factor in inflation to get an accurate
+						   estimation of box office revenues over a span of 20 years.
+						</p>
+						<p>If that didn't convince you, think about it this way: $1 in 1992 was worth $1.64 in 2012. That's over a 150%
+						   increase. This means that all the box office revenues reported in 1992 would only be accurate to those reported
+						   in 2012 if we multiply them by 1.64.
+						</p>
+						<p>
+							The following plot shows the difference between both the revenue corrected for inflation, and the original
+							revenue values. Since regularly plotting the revenue leads to an extremely heavy-tailed distribution, as most
+							values are around \(10^8\) in price, we graphed it using a loglog plot.
+						</p>
+						<iframe class="responsive-plot" src="plots/revenue_distribution.html" frameborder="0"></iframe>
 					</section>
+					<iframe class="responsive-plot" src="plots/genre_distribution.html" frameborder="0"></iframe>
 					<section>
 						<header>
 							<h3>Divider</h3>
@@ -51,7 +63,6 @@
 						facilisis leo magna. Cras sit amet urna eros, id egestas urna. Quisque aliquam
 						tempus euismod. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
 						posuere cubilia.</p>
-						<hr />
 						<p>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra
 						ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel. Praesent nec orci
 						facilisis leo magna. Cras sit amet urna eros, id egestas urna. Quisque aliquam

@@ -5,6 +5,9 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<script type="text/javascript" async
+			src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+		</script>
 	</head>
 	<body class="is-preload">
 
@@ -25,109 +28,54 @@
 						<h2>A little about the weather dataset</h2>
 					</header>
 					<section>
-						<header>
-							<h3>Paragraph</h3>
-							<p>This is the subtitle for this particular heading</p>
-						</header>
-						<p>Phasellus nisl nisl, varius id <sup>porttitor sed pellentesque</sup> ac orci. Pellentesque
-						habitant <strong>strong</strong> tristique <b>bold</b> et netus <i>italic</i> malesuada <em>emphasized</em> ac turpis egestas. Morbi
-						leo suscipit ut. Praesent <sub>id turpis vitae</sub> turpis pretium ultricies. Vestibulum sit
-						amet risus elit.</p>
-					</section>
-					<section>
-						<header>
-							<h3>Blockquote</h3>
-						</header>
-						<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget.
-						tempus euismod. Vestibulum ante ipsum primis in faucibus.</blockquote>
+						<p>The United States is geographically huge – the weather can differ from state to state, or even city to city! 
+						   This brings up the question: how do we generalize the weather to accurately represent the different patterns across
+						   the United States?
+						</p>
+						<p>Our solution to this question was to figure out which cities represented the US best in terms of population and movie
+						   theater concentration, while still ensuring we captured a proper representation of all weather types present. This gave 
+						   us the following 8 cities: New York, Los Angeles, Chicago, Seattle, Washington DC, Atlanta, Miami, Dallas, San Francisco
+						   (not ranked in terms of how much we actually like them).
+						</p>
+						<p>For those who haven't visited all eight cities before, here's a comparison of each of the eight cities and their
+						   distributions in terms of precipitation and temperature. Notice how, as expected, Miami is consistently very warm whereas
+						   cities like Chicago or New York have a wider distribution and more bad weather days (snow days and cold days).
+						</p>
 					</section>
 					<iframe class="responsive-plot" src="plots/weather_distribution.html" frameborder="0"></iframe>
 					<section>
 						<header>
-							<h3>Divider</h3>
+							<p>What about Natural Disasters?</p>
 						</header>
-						<p>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra
-						ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel. Praesent nec orci
-						facilisis leo magna. Cras sit amet urna eros, id egestas urna. Quisque aliquam
-						tempus euismod. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-						posuere cubilia.</p>
-						<hr />
-						<p>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra
-						ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel. Praesent nec orci
-						facilisis leo magna. Cras sit amet urna eros, id egestas urna. Quisque aliquam
-						tempus euismod. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-						posuere cubilia.</p>
+						<p>One thing that we did not take note of was natural disasters. Similar to Iceland's volcanoes, many of these parts of the US have
+						   some sort of natural disaster. In Miami and Atlanta, these two cities often experience hurricanes every year. When hurricanes hit,
+						   all people in the cities nearest to the southeast coast are forced to evacuate for at least one week. I'm not sure how many people
+						   think of going to the theaters when their house is flooded with muddy water, but this definitely can affect sales, especially if the
+						   opening weekend falls at the same time as a hurricane landing! San Francisco also has its fair share of natural disasters: earthquakes.
+						   These don't happen nearly as often as hurricanes, but if a big earthquake does hit, it can affect a large portion of the area around
+						   the epicenter, leading to a definite decrease in movie attendance.
+						</p>
 					</section>
 					<section>
 						<header>
-							<h3>Unordered List</h3>
+							<p>Our Redefinition of "Average" Temperature</p>
 						</header>
-						<ul class="default">
-							<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-							<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-							<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-							<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-						</ul>
-					</section>
-					<section>
-						<header>
-							<h3>Ordered List</h3>
-						</header>
-						<ol class="default">
-							<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-							<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-							<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-							<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-						</ol>
-					</section>
-					<section>
-						<header>
-							<h3>Table</h3>
-						</header>
-						<div class="table-wrapper">
-							<table class="default">
-								<thead>
-									<tr>
-										<th>ID</th>
-										<th>Name</th>
-										<th>Description</th>
-										<th>Price</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>45815</td>
-										<td>Something</td>
-										<td>Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</td>
-										<td>29.99</td>
-									</tr>
-									<tr>
-										<td>24524</td>
-										<td>Nothing</td>
-										<td>Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</td>
-										<td>19.99</td>
-									</tr>
-									<tr>
-										<td>45815</td>
-										<td>Something</td>
-										<td>Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</td>
-										<td>29.99</td>
-									</tr>
-									<tr>
-										<td>24524</td>
-										<td>Nothing</td>
-										<td>Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</td>
-										<td>19.99</td>
-									</tr>
-								</tbody>
-								<tfoot>
-									<tr>
-										<td colspan="3"></td>
-										<td>100.00</td>
-									</tr>
-								</tfoot>
-							</table>
-						</div>
+						<p>The average temperature calculations are typically calculated using a formula very similar to
+						   \(T_{\mathrm{avg}} = \frac12 \cdot T_{\mathrm{high}} + \frac12 \cdot T_{\mathrm{low}}\). However, this assumes that people are active
+						   at all times of the day, meaning it will take into consideration days where the morning may be particularly cold but the during the day,
+						   the temperature warms up significantly.
+						</p>
+						<p>To mitigate this effect, we checked a few daily temperature graphs for the cities and found that the trend in daily temperature is roughly
+						   the same throughout the day: the coldest time is around 6 AM and the warmest is around 3 PM. We isolated the portion of the graph to when
+						   people are most likely to be outside watching movies (highlighted in blue on the graph), especially given movie showtimes.
+						</p>
+						<figure>
+							<img src="images/weather_daily_graph.jpg" alt="Weather Daily Graph">
+							<figcaption>Temperature Graph for San Francisco, December 21, 2023</figcaption>
+						</figure>
+						<p>Given this graph, we can see that a better estimate of the average daily temperature for the purposes of our data analysis would be 
+						   \(T_{\mathrm{avg}} = \frac23 \cdot T_{\mathrm{high}} + \frac13 \cdot T_{\mathrm{low}}\). This accurately captures how people generally choose
+						   afternoon or evening, both warmer times of the day, to watch movies.</p>
 					</section>
 					<h2>
 						<a href="index.html"><span class="arrow arrow-left"></span>   Back to the Data Story</a>

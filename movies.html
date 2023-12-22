@@ -53,96 +53,97 @@
 						</p>
 						<iframe class="responsive-plot" src="plots/revenue_distribution.html" frameborder="0"></iframe>
 						<p>
-							A quick t-test confirms the need for inflation correction, with the p-value for the ttest between both simulations
+							A quick t-test confirms the need for inflation correction, with the p-value for the t-test between both revenue distributions
 							yielding a value of \(1.68\cdot 10^{-10} \ll 0.05\). 
 						</p>
 					</section>
-					<iframe class="responsive-plot" src="plots/genre_distribution.html" frameborder="0"></iframe>
 					<section>
 						<header>
-							<h3>Divider</h3>
+							<p>Next Up: What is Each Movie About?</p>
 						</header>
-						<p>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra
-						ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel. Praesent nec orci
-						facilisis leo magna. Cras sit amet urna eros, id egestas urna. Quisque aliquam
-						tempus euismod. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-						posuere cubilia.</p>
-						<p>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra
-						ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel. Praesent nec orci
-						facilisis leo magna. Cras sit amet urna eros, id egestas urna. Quisque aliquam
-						tempus euismod. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-						posuere cubilia.</p>
-					</section>
-					<section>
-						<header>
-							<h3>Unordered List</h3>
-						</header>
-						<ul class="default">
-							<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-							<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-							<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-							<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-						</ul>
-					</section>
-					<section>
-						<header>
-							<h3>Ordered List</h3>
-						</header>
-						<ol class="default">
-							<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-							<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-							<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-							<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-						</ol>
-					</section>
-					<section>
-						<header>
-							<h3>Table</h3>
-						</header>
-						<div class="table-wrapper">
-							<table class="default">
-								<thead>
-									<tr>
-										<th>ID</th>
-										<th>Name</th>
-										<th>Description</th>
-										<th>Price</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>45815</td>
-										<td>Something</td>
-										<td>Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</td>
-										<td>29.99</td>
-									</tr>
-									<tr>
-										<td>24524</td>
-										<td>Nothing</td>
-										<td>Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</td>
-										<td>19.99</td>
-									</tr>
-									<tr>
-										<td>45815</td>
-										<td>Something</td>
-										<td>Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</td>
-										<td>29.99</td>
-									</tr>
-									<tr>
-										<td>24524</td>
-										<td>Nothing</td>
-										<td>Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</td>
-										<td>19.99</td>
-									</tr>
-								</tbody>
-								<tfoot>
-									<tr>
-										<td colspan="3"></td>
-										<td>100.00</td>
-									</tr>
-								</tfoot>
-							</table>
-						</div>
+						<p>Movies each have their own set of genres, but some might be more popular than others. Furthermore, each genre
+						   might have a different audience with a different preference for weather. You may not have noticed, but you probably know some
+						   people who enjoy a good romance movie when it's raining out (to soothe the weather depression), or some crazy ones
+						   who think that rain and thunder is a perfect moment for a scary horror movie.
+						</p>
+						<p>Just for fun, here's a word cloud to show which genres are the most popular choices for movie releases between 1992 and 2012!</p>
+						<img class="smaller-img" src="plots/genre_wordcloud.png" alt="Genre Wordcloud">
+						<p>It's no surprise that drama, comedy, and action are all among the top genres released. Just think about the last movie
+						   you recall hearing about – there's a high chance it falls into at least one of those three categories.
+						</p>
+						<p>If we take another look at the word cloud, we can notice one other issue: there are too many genres. To help mitigate this
+						   issue, we aggregated similar genres under the same umbrella as follows:
+						</p>
+						<section>
+							<div class="table-wrapper">
+								<table class="default">
+									<thead>
+										<tr>
+											<th>Overall Genre Name</th>
+											<th>Sub-Genres</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Western</td>
+											<td>Western</td>
+										</tr>
+										<tr>
+											<td>Action</td>
+											<td>Action</td>
+										</tr>
+										<tr>
+											<td>Comedy</td>
+											<td>Comedy</td>
+										</tr>
+										<tr>
+											<td>Thrillers</td>
+											<td>Thrillers</td>
+										</tr>
+										<tr>
+											<td>Adventure</td>
+											<td>Adventure</td>
+										</tr>
+										<tr>
+											<td>Drama</td>
+											<td>Drama</td>
+										</tr>
+										<tr>
+											<td>Musical</td>
+											<td>Musical</td>
+										</tr>
+										<tr>
+											<td>Animation</td>
+											<td>Animated, Anime, Animation</td>
+										</tr>
+										<tr>
+											<td>History</td>
+											<td>Archive, History</td>
+										</tr>
+										<tr>
+											<td>Biography</td>
+											<td>Biopic, Biographical, Biography</td>
+										</tr>
+										<tr>
+											<td>Sports</td>
+											<td>Sports</td>
+										</tr>
+										<tr>
+											<td>Fantasy</td>
+											<td>Fantasy</td>
+										</tr>
+										<tr>
+											<td>Indie</td>
+											<td>Indie</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</section>
+						<iframe class="responsive-plot" src="plots/genre_distribution.html" frameborder="0"></iframe>
+						<p>One interesting aspect of the distribution of genres is the steep drop between the first
+						   two most popular genres, drama and comedy, and the rest of the genres that are released. 
+						</p>
 					</section>
 					<h2>
 						<a href="index.html"><span class="arrow arrow-left"></span>   Back to the Data Story</a>

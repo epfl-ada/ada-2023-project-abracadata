@@ -2037,6 +2037,18 @@ img {
 	display: block;
 }
 
+.smaller-img {
+	max-width: 70%;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	padding-bottom: 5%;
+}
+
+.smaller-img img {
+	align-items: center;
+}
+
 /* Container Image */
 .container-image {
 	width: 100%;

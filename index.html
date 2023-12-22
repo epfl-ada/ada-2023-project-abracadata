@@ -5,6 +5,9 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<script type="text/javascript" async
+			src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+		</script>
 	</head>
 	<body class="is-preload">
 
@@ -73,8 +76,17 @@
 						</p>
 						<p>Most of the famous movies we can think of are from major film studios. Just to list a few,
 						   there's Universal Studios, with its theme park in Los Angeles as well, and Fox Studios, with
-						   its classic beams of light shining on the large statue of "FOX". These huge film studios come
-						   with many perks, such as a b
+						   its classic beams of light shining on the large statue of "FOX". These famous film studios come
+						   with many perks, such as a huge production budget and better film promotion.
+						</p>
+						<p>So let's put it into perspective: just how much more revenue do movies from major films
+						   generate? Well, have a look below:
+						</p>
+						<iframe class="responsive-plot" src="plots/studios_bo_comparison.html" frameborder="0"></iframe>
+						<p>In case the stark drop in mean revenue for the indie films weren't enough as an answer, the answer:
+						   a lot more. We can even do a t-test if you still aren't convinced. Doing a test on the distribution
+						   of revenue for all the major film studio releases against the distribution of the indie films, we
+						   get a p-value of \(6.98\cdot 10^{-98}\) which we will just call \(0\).
 						</p>
 					</section>
 				</div>

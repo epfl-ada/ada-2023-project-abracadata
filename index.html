@@ -74,6 +74,19 @@
 						   the weather can change from warm, sunny weather to chilly, fall weather, meaning that when pairing
 						   the movies, we should match approximate time of year.
 						</p>
+						<p>
+							First, we will try to quantify the effect bad weather might have on each of the day after release, in each city. In other words, we try to see both if having a bad weather day just after release or 2 weeks later yields the same effect on the box office, and if the effects is the same between cities. We try to do this for the 28 days following release. Doing a linear regression to quantify the effect, we get an R^2 of 0.0, indicating that this variable doesn’t explain anything. This could be because this is a very greedy try, since we have many variables. 
+To see if bad weather could still have an influence, we get another type of analysis. We count the number of bad weather days 28 days after release for every city, and use this as the indicator variables.  Then, we separate movies into 2 groups : the one with the most amount of bad weather days are compared to those with the least. We then match them based on their release date, to obtain comparable populations.
+Once again, the result are not significant.</p>
+						<img src="plots/heatmap_linear_regression.png">
+						<img src="plots/Histogram_revenues_counts_with_matching.png">
+
+
+						<p>Finally, we try to quantify the effect of just the first weekend after release. Movies that had 2 days of god weather in most cities after release were put in one group, while those with 2 days of bad weather in most cities were put in the other. We then do a matching on both dataset, and get the following plots:
+Again, no significant results are seen: this shows that bad weather probably doesn’t impact the success of movies.
+						</p>
+						<img src="plots/Histogram_revenues_first_weekend_with_matching.png">
+
 
 						<section>
                        
@@ -95,14 +108,14 @@
 								<p>To rigorously test whether bad weather affects different movie genres in varied ways, we conducted a linear regression analysis incorporating interactions between various genres and the 'bad weather' condition. Initially, our regression model included interactions for all available genres. However, this approach faced a challenge: the vast number of genres diluted the observable effect of bad weather, making it difficult to discern clear patterns in the data. Additionally, some interaction coefficients in this comprehensive model were not statistically significant, indicating a lack of consistent influence across all genres.
 									<figure>
 										<img src="images/olsreg.webp" alt="Weather Daily Graph">
-										<figcaption>The OlS regression results</figcaption>
+										<figcaption>The OLS regression results</figcaption>
 									</figure>
 									To address these complexities, we refined our approach by focusing on the three most frequently watched genres. By limiting our analysis to these key categories, we could more accurately capture the nuances of how weather might differentially impact viewer preferences. This targeted analysis revealed that the influence of bad weather on movie attendance is indeed heterogeneous – it varies significantly depending on the genre. Such findings suggest that while some genres might see a boost in popularity during bad weather, others do not, highlighting the intricate interplay between environmental conditions and entertainment choices.
 								</p>
 
 								<figure>
 									<img src="images/olstop3.webp" alt="Weather Daily Graph">
-									<figcaption>The OlS regression results with top 3 genres</figcaption>
+									<figcaption>The OLS regression results with top 3 genres</figcaption>
 								</figure>
 
 								<p>The regression output indicates that weather status (captured by the variable AVG_WEATHER_STATUS) and its interaction with movie genres can have differing effects on box office performance. Specifically:
@@ -156,16 +169,14 @@
 						<p>
 							At a quick glance, we can actually notice that summer months like June and July actually have very few movie releases, whereas September
 							has the most (turns out I'm not fit to be a movie producer...). But, we notice that summer months also seem to have the highest proportion
-							of bad weather days. Maybe producers do know how to strategically 
+							of bad weather days. Maybe producers do know how to strategically choose when to release their movies.
 						</p>
-						<p>
-Then, we do the same for the probability of rain for each month. The summer month appear to be the one with the most bad weather cases. This contrast with the result from above, as they are the months with the least amount of movie released.
-\picture with the bad weather per month
-To get into more details, we look at the number of movies released per month between 1992 and 2012, and the amount of bad weather days between these 2 days. These are shown in the heatmaps below: 
-\heatmaps
-However, it shows that September tends to have a lot of bad weather days, but also lots of movie released, while June and July have a lot of bad weather days, and low amount of movie released
-Additionally, running a correlation between these 2 variables, we obtain the following graph, that shows no clear correlation. The score is also quite low : 0.16, indicating that there is a low effect. 
-\correlation
+						<p> To get into more details, let's take a look with more granularity. Let's focus on the number of movies released per month between 1992 and 2012 and the amount of bad weather days between these 2 years. These are shown in the heatmaps below:</p>
+
+						<img src="plots/heatmap_bad_weather.png">
+						<img src="plots/heatmap_movie_release.png">
+						<p>However, it shows that September tends to have a lot of bad weather days, with lots of movie released, while June and July have a lot of bad weather days, and low amount of movie released.
+						Additionally, running a correlation between these 2 variables, we obtain the following graph, that shows no clear correlation. The score is also quite low: 0.16, indicating that there is a minimal effect. 
 						</p>
 					</section>
 					<section>
